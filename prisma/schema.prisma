@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Enquiry {
+  id            String   @id @default(cuid())
+  name          String
+  email         String
+  organisation String?
+  service       String?
+  message       String
+  createdAt     DateTime @default(now())
+}
